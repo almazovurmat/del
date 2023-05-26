@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import CellClass from "../../lib/CellClass";
 
+interface IProps {
+    updateClickedCellCounter: () => void;
+}
 
-const Cell = () => {
+const Cell: React.FC<IProps> = ({updateClickedCellCounter}) => {
     const symbol: string = 'O';
     const totalNumberCells: number = 36;
-
 
     const createItems = () => {
         const symbolPosition = Math.floor(Math.random() * totalNumberCells);
@@ -14,10 +16,7 @@ const Cell = () => {
         let hasItem;
         for (let id = 1; id <= totalNumberCells; id++) {
             hasItem = id === symbolPosition;
-            const CellObject = new CellClass(id, hasItem, false);
-            cells.push(
-                CellObject
-            );
+            cells.push((new CellClass(id, hasItem, false)));
         }
         return cells;
     }
@@ -32,9 +31,11 @@ const Cell = () => {
         const cellsCopy = [...cells];
         cellsCopy[cellCopy.id - 1] = cellCopy;
         setCells(cellsCopy);
+        CellClass.clickedCellCounter++;
+        updateClickedCellCounter();
 
         if (cell.hasItem) {
-            alert('You found symbol');
+            alert('Congratulations! You found symbol.');
         }
     };
 

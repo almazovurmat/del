@@ -4,6 +4,7 @@ class CellClass {
     hasItem: boolean;
     clicked: boolean;
 
+    static clickedCellCounter: number = 0;
 
     constructor(id:number, hasItem:boolean, clicked:boolean) {
         this.id = id;
