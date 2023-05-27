@@ -50,4 +50,5 @@
   color: white;
   font-weight: 700;
   margin-top: 30px;
+  z-index: 200;
 }

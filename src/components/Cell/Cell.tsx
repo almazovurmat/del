@@ -37,6 +37,8 @@ const Cell: React.FC<IProps> = ({updateClickedCellCounter, isReset, resetCells})
 
         if (cell.hasItem) {
             alert('Congratulations! You found symbol.');
+            const coverDiv:HTMLElement = document.querySelector('.cover') as HTMLElement;
+            coverDiv.style.display = 'block';
         }
     };
 
@@ -47,6 +49,7 @@ const Cell: React.FC<IProps> = ({updateClickedCellCounter, isReset, resetCells})
             CellClass.clickedCellCounter = 0;
             resetCells();
             setCells(createItems());
+
         }
     }, [isReset, resetCells]);
 
