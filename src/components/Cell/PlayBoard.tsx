@@ -18,7 +18,6 @@ const PlayBoard = () => {
     };
 
     const handleResetComplete = () => {
-        console.log('urban');
         setIsReset(false);
     };
 

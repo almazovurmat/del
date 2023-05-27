@@ -13,7 +13,6 @@ const Cell: React.FC<IProps> = ({updateClickedCellCounter, isReset, resetCells})
 
     const createItems = () => {
         const symbolPosition = Math.floor(Math.random() * totalNumberCells);
-        // console.log(symbolPosition);
         const cells = [];
         let hasItem;
         for (let id = 1; id <= totalNumberCells; id++) {
@@ -47,6 +46,7 @@ const Cell: React.FC<IProps> = ({updateClickedCellCounter, isReset, resetCells})
             setCells(createItems());
             CellClass.clickedCellCounter = 0;
             resetCells();
+            setCells(createItems());
         }
     }, [isReset, resetCells]);
 

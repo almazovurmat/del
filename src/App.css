@@ -8,7 +8,8 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
-  border: 1px solid red;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  padding: 20px;
 }
 
 .cell {
@@ -20,15 +21,33 @@
   text-align: center;
   line-height: 70px;
   font-weight: 700;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.5);
+  border-radius: 3px;
 }
 
 .wrongCell {
   background: white;
   border: 1px solid white;
   color: white;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.07);
 }
 
 .found {
   background: forestgreen;
   color: white;
+}
+
+.counter {
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.btnReset {
+  background: #17a2b8;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  margin-top: 30px;
 }
